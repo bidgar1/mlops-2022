@@ -2,4 +2,4 @@ certifi==2022.6.15
 munkres==1.1.4
 scipy==1.9.0
 sip==4.19.13
-
+nltk==3.0.1
