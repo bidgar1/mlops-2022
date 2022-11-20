@@ -32,16 +32,12 @@ def train_model_tree(x_train, y_train, x_test, y_test):
     tree_predicted_train = tree_model.predict(x_test)
     train_metric = metrics.accuracy_score(y_pred=tree_predicted_train, y_true=y_test)
     np.append(tree_predicted_train,train_metric)
-    return tree_predicted_train;   
+    return train_metric;   
 
 if args.clf_name == 'svm':
     predicted_value_model = train_model_svm(X_train1,y_train1,X_test1,y_test1)
-    print(predicted_value_model)
-    name_value = args.clf_name+'_'+args.random_state+'.txt'
-    np.savetxt(name_value, predicted_value_model)
+    print('test_accuracy: ',predicted_value_model)
 
 if args.clf_name == 'tree':
     predicted_value_model = train_model_tree(X_train1,y_train1,X_test1,y_test1)
-    print(predicted_value_model)
-    name_value = args.clf_name+'_'+args.random_state+'.txt'
-    np.savetxt(name_value, predicted_value_model)
+    print('test_accuracy: ',predicted_value_model)
